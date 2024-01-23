@@ -6,19 +6,19 @@ const login = document.getElementById("login");
 register.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  let email = event.target[0].value;
+  let username = event.target[0].value;
   let password = event.target[1].value;
 
   try {
     const response = await fetch(
-      "https://kind-ruby-clam.cyclic.app/api/v1/admin/register",
+      "https://todo-for-n92.cyclic.app/user/register",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email,
+          username,
           password,
         }),
       }
@@ -42,19 +42,19 @@ register.addEventListener("submit", async (event) => {
 login.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  let email = event.target[0].value;
+  let username = event.target[0].value;
   let password = event.target[1].value;
 
   try {
     const response = await fetch(
-      "https://kind-ruby-clam.cyclic.app/api/v1/admin/login",
+      "https://todo-for-n92.cyclic.app/user/login",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email,
+          username,
           password,
         }),
       }
