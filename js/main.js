@@ -75,9 +75,9 @@ window.addEventListener("load", () => {
 });
 //? end of ToDo js
 
-//?start Logout from ToDo app and replace to registration
+//?start Logout from ToDo app, remove token and replace to registration
 function logout() {
   localStorage.removeItem("token");
   window.location.href = "./auth.html";
 }
-//? end of Logout from ToDo app and replace to registration
+//? end of Logout from ToDo app, remove token and replace to registration
