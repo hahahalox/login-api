@@ -1,7 +1,8 @@
-alert("Please wait after login or registration🙃")
+alert("Please wait after login or registration🙃");
 const register = document.getElementById("register");
 const login = document.getElementById("login");
 
+//? start Registration
 register.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -35,8 +36,9 @@ register.addEventListener("submit", async (event) => {
     console.log(error);
   }
 });
+//? end of Registration
 
-//! log in
+//? start Login
 login.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -58,12 +60,12 @@ login.addEventListener("submit", async (event) => {
       }
     );
     if (!response.ok) {
-      alert("Failed to login")
+      alert("Failed to login");
       throw new Error("Failed to login ☹");
     }
     const result = await response.json();
     console.log(result);
-    
+
     localStorage.setItem("token", result.token);
     location.href = "../index.html";
     alert("Success 😎");
@@ -71,21 +73,15 @@ login.addEventListener("submit", async (event) => {
     console.log(error);
   }
 });
-
-
-
-
-
-
-
+//? end of Login
 
 const wrapper = document.querySelector(".wrapper"),
-          signupHeader = document.querySelector(".signup header"),
-          loginHeader = document.querySelector(".login header");
+  signupHeader = document.querySelector(".signup header"),
+  loginHeader = document.querySelector(".login header");
 
-        loginHeader.addEventListener("click", () => {
-          wrapper.classList.add("active");
-        });
-        signupHeader.addEventListener("click", () => {
-          wrapper.classList.remove("active");
-        });
+loginHeader.addEventListener("click", () => {
+  wrapper.classList.add("active");
+});
+signupHeader.addEventListener("click", () => {
+  wrapper.classList.remove("active");
+});
